@@ -16,6 +16,11 @@ html
    scroll-behavior: smooth;
 }
 
+body
+{
+   overflow-x: hidden;
+}
+
 
 li
 {
@@ -25,4 +30,11 @@ li
 a
 {
    text-decoration: none;
+}
+
+img
+{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
 }

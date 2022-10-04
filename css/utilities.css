@@ -2,9 +2,9 @@
 {
    /* Colors */
    --primary-color: #21BBAC;
-
    --secondary-color: #fff;
    --tertiary-color: #00754a;
+   --overlay-color: rgba(0, 0, 0, .4);
 
    /* Radii */
    --base-borde-radius: 10px;
@@ -17,4 +17,14 @@
 section
 {
    height: 100vh;
+}
+
+.overlay
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-color: var(--overlay-color);
 }

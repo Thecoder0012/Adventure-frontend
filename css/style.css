@@ -1,3 +1,4 @@
+/* Nav Bar */
 nav.main-nav
 {
    position: sticky;
@@ -8,6 +9,7 @@ nav.main-nav
    background-color: var(--secondary-color);
    border-bottom: 2px solid var(--primary-color);
    box-shadow: var(--box-shadow);
+   z-index: 10;
 }
 
 nav.main-nav .container.nav-container
@@ -20,6 +22,12 @@ nav.main-nav .container.nav-container
    padding: 20px;
    width: 100%;
 }
+
+nav.main-nav .container.nav-container h1.logo
+{
+   color: var(--primary-color);
+}
+
 
 nav.main-nav .container.nav-container ul
 {
@@ -49,3 +57,65 @@ nav.main-nav .container.nav-container ul li a.active
    border-bottom: 1px solid var(--primary-color);
 }
 
+/* Slider */
+.slider
+{
+   position: relative;
+}
+
+.slider .slide
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100vw;
+   opacity: 0;
+   transition: opacity .3s ease-in-out;
+}
+
+.slider .slide img
+{
+   height: 100%;
+   width: 100%;
+}
+
+.slider .slide .content h2
+{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-transform: uppercase;
+   font-size: 7em;
+   color: var(--secondary-color);
+   text-shadow: var(--text-shadow);
+   white-space: nowrap;
+}
+
+.slider .slide.current
+{
+   position: absolute;
+   opacity: 1;
+   transition: opacity .3s ease-in-out;
+}
+
+.slider .slide:nth-child(1)
+{
+   background: url('../Images/Slider/gokart.jpg') no-repeat center center/cover;
+}
+
+.slider .slide:nth-child(2)
+{
+   background: url('../Images/Slider/minigolf.jpg') no-repeat center center/cover;
+}
+
+.slider .slide:nth-child(3)
+{
+   background: url('../Images/Slider/paintball.jpg') no-repeat center center/cover;
+}
+
+.slider .slide:nth-child(4)
+{
+   background: url('../Images/Slider/sumowrestling.png') no-repeat center center/cover;
+}
