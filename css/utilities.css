@@ -1,0 +1,20 @@
+:root
+{
+   /* Colors */
+   --primary-color: #21BBAC;
+
+   --secondary-color: #fff;
+   --tertiary-color: #00754a;
+
+   /* Radii */
+   --base-borde-radius: 10px;
+
+   /* Shadows */
+   --text-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+   --box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+
+section
+{
+   height: 100vh;
+}
