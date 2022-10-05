@@ -1,13 +1,31 @@
 // Nav Bar
 const navBar = document.getElementById('main-nav')
 const navBarLinks = document.querySelectorAll('nav.main-nav .container.nav-container ul li a')
-
-
 // Slider
 const slides = document.querySelectorAll('.slide')
 const isAutoSliding = true
 const autoSlideIntervalTime = 3000
 let slideInterval
+
+
+// Window Events //
+window.addEventListener('scroll', () =>
+{
+   // Adding and removing the 'shrink' class based on the scroll position on the y-axis
+   if (window.scrollY < 600)
+   {
+      navBar.classList.remove('shrink')
+   }
+   navBar.classList.add('shrink')
+})
+
+window.addEventListener('load', () =>
+{
+   navBarLinks[0].classList.add('active')
+
+   window.scrollTo({ top: 0 })
+})
+
 
 
 // Update active link
@@ -19,7 +37,6 @@ navBarLinks.forEach((navBarLink) =>
       navBarLink.classList.add('active')
    })
 })
-
 
 // Slider //
 // Next Slide

@@ -7,18 +7,35 @@
    --overlay-color: rgba(0, 0, 0, .4);
 
    /* Radii */
-   --base-borde-radius: 10px;
+   --base-border-radius: 10px;
 
    /* Shadows */
    --text-shadow: 0 2px 5px rgba(0, 0, 0, .3);
    --box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 }
 
+/* Section */
 section
 {
+   position: relative;
    height: 100vh;
+   width: 100vw;
 }
 
+section:not(.home) h2
+{
+   position: absolute;
+   top: -8%;
+   left: 50%;
+   transform: translateX(-50%);
+   color: var(--tertiary-color);
+   text-transform: uppercase;
+   border-bottom: 2px solid var(--tertiary-color);
+   font-size: 2em;
+}
+
+
+/* Overlay */
 .overlay
 {
    position: absolute;
