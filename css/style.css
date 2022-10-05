@@ -125,23 +125,24 @@ nav.main-nav .container.nav-container ul li a.active
    padding: 5% 5%;
    text-align: center;
    line-height: 2.5em;
-   background-color: #474e5d;
-   color: white;
+   background-color: var(--primary-color);
+   color: var(--secondary-color);
  }
 
  #contact{
-   background-color: powderblue;
+   /* --tertiary-color: #00754a; */
+   background-color: var(--tertiary-color);
  }
 
  .info-container button {
    border-radius: 10px;
    background-color: transparent;
-   color: #fff;
+   color: var(--secondary-color);
    position: relative;
    font-size: 2em;
    font-weight: 700;
    font-family: 'Open Sans',sans Serif;
-   border:white 1px solid;
+   border:var(--secondary-color) 1px solid;
    transition: all 0.5s;
    padding: 1%;
    width: 20%;
