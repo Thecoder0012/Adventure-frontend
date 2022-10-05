@@ -1,6 +1,7 @@
 // BRINGING IN THE ELEMENTS TO THE DOM //
 
 // Nav Bar
+const overlay = document.querySelector('.body-overlay');
 const navBar = document.getElementById('main-nav')
 const navBarLinks = document.querySelectorAll('nav.main-nav .container.nav-container ul li a')
 
@@ -10,16 +11,23 @@ const isAutoSliding = true
 const autoSlideIntervalTime = 3000
 let slideInterval
 
+// document.body.classList.remove('body-overlay')
+
 // Modals
-const openModalBtn = document.getElementById('open-modal-btn')
+const openModalBtn = document.getElementsByClassName('open-modal-btn')
 const closeModalBtn = document.getElementById('close-modal-btn')
 const modal = document.querySelector('.modal')
-openModalBtn.addEventListener('click', openModal)
+
+
 closeModalBtn.addEventListener('click', (e) => closeModal(e))
 
 // Scroll To Top Button
 const scrollToTopBtn = document.getElementById('scroll-to-top-btn')
 
+// Modal pops up when clicking the activities
+for(let i = 0; i < openModalBtn.length; i++){
+   openModalBtn[i].addEventListener('click', openModal)
+}  
 
 // EVENT LISTENERS //
 
@@ -137,6 +145,7 @@ function openModal()
    if (modal.classList.contains('active'))
    {
       document.body.classList.add('overlay')
+      overlay.classList.remove('hidden');
       document.body.style.pointerEvents = 'none'
    }
 }
@@ -149,6 +158,8 @@ function closeModal(e)
    if (!modal.classList.contains('active'))
    {
       document.body.classList.remove('overlay')
+      document.body.classList.remove('body-overlay')
+      overlay.classList.add('hidden');
       document.body.style.pointerEvents = 'all'
    }
 }
