@@ -1,12 +1,27 @@
+// BRINGING IN THE ELEMENTS TO THE DOM //
+
 // Nav Bar
 const navBar = document.getElementById('main-nav')
 const navBarLinks = document.querySelectorAll('nav.main-nav .container.nav-container ul li a')
+
 // Slider
 const slides = document.querySelectorAll('.slide')
 const isAutoSliding = true
 const autoSlideIntervalTime = 3000
 let slideInterval
 
+// Modals
+const openModalBtn = document.getElementById('open-modal-btn')
+const closeModalBtn = document.getElementById('close-modal-btn')
+const modal = document.querySelector('.modal')
+openModalBtn.addEventListener('click', openModal)
+closeModalBtn.addEventListener('click', (e) => closeModal(e))
+
+// Scroll To Top Button
+const scrollToTopBtn = document.getElementById('scroll-to-top-btn')
+
+
+// EVENT LISTENERS //
 
 // Window Events //
 window.addEventListener('scroll', () =>
@@ -16,16 +31,38 @@ window.addEventListener('scroll', () =>
    {
       navBar.classList.remove('shrink')
    }
-   navBar.classList.add('shrink')
+   else
+   {
+      navBar.classList.add('shrink')
+   }
+
+   if (window.scrollY > 600)
+   {
+      scrollToTopBtn.classList.add('active')
+   }
+   else
+   {
+      scrollToTopBtn.classList.remove('active')
+   }
 })
 
 window.addEventListener('load', () =>
 {
    navBarLinks[0].classList.add('active')
-
-   window.scrollTo({ top: 0 })
+   scrollToTopOfWindow()
 })
 
+scrollToTopBtn.addEventListener('click', scrollToTopOfWindow)
+
+// FUNCTIONS //
+
+// Scroll To Top of Window
+function scrollToTopOfWindow()
+{
+   navBarLinks.forEach((navBarLink) => navBarLink.classList.remove('active'))
+   navBarLinks[0].classList.add('active')
+   window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
 
 // Update active link
@@ -89,4 +126,29 @@ const previousSlide = () =>
 if (isAutoSliding)
 {
    slideInterval = setInterval(nextSlide, autoSlideIntervalTime)
+}
+
+
+// Open Modal
+function openModal()
+{
+   modal.classList.add('active')
+
+   if (modal.classList.contains('active'))
+   {
+      document.body.classList.add('overlay')
+      document.body.style.pointerEvents = 'none'
+   }
+}
+
+// Close Modal
+function closeModal(e)
+{
+   modal.classList.remove('active')
+
+   if (!modal.classList.contains('active'))
+   {
+      document.body.classList.remove('overlay')
+      document.body.style.pointerEvents = 'all'
+   }
 }

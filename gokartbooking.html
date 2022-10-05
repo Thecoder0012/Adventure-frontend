@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/utilities.css">
+   <link rel="stylesheet" href="css/global.css">
+   <script src="https://kit.fontawesome.com/e05f21b32e.js" crossorigin="anonymous"></script>
+   <!-- <script src="main.js" defer></script> -->
+   <title>AdventureXP | Go Kart Booking</title>
+</head>
+
+<body>
+   <nav class="main-nav" id="main-nav">
+      <div class="container nav-container">
+         <a href="index.html">
+            <h1 class="logo" id="home">AdventureXP</h2>
+         </a>
+         <ul>
+            <li>
+               <a href="index.html">Home</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+
+   <!-- Section: Booking -->
+   <section class="booking gokart-booking" id="gokart-booking">
+      <div class="overlay"></div>
+      <img src="Images/Bookings/gokart.jpg" alt="Go Kart">
+
+      <!-- Form -->
+      <form action="" method="">
+         <header>
+            <h2>Book Go Kart</h2>
+         </header>
+         <!-- Dato -->
+         <div>
+            <label for="date-input">Date</label>
+            <input type="date" class="input date-input" id="date-input">
+         </div>
+
+         <!-- Time -->
+         <div>
+            <label for="time-input">Time</label>
+            <input type="time" class="input time-input" id="time-input">
+         </div>
+
+         <!-- Number of Participants -->
+         <div>
+            <label for="number-of-participants">Number of Participants</label>
+            <input type="number" class="input number-of-participants-input" id="number-of-participants-input">
+         </div>
+
+         <!-- Additional Info -->
+         <div>
+            <label for="additional-info">Additional Info</label>
+            <textarea class="info additional-info" id="additional-info"></textarea>
+         </div>
+
+         <div>
+            <input type="checkbox" class="checkbox" id="checkbox">
+         </div>
+
+         <button type="submit" value="Submit">Book</button>
+      </form>
+   </section>
+</body>
+
+</html>

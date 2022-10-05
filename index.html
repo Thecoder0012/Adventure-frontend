@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/utilities.css">
    <link rel="stylesheet" href="css/global.css">
+   <script src="https://kit.fontawesome.com/e05f21b32e.js" crossorigin="anonymous"></script>
    <script src="main.js" defer></script>
    <title>AdventureXP | Home</title>
 </head>
@@ -16,7 +17,6 @@
    <nav class="main-nav" id="main-nav">
       <div class="container nav-container">
          <h1 class="logo" id="home">AdventureXP</h2>
-
             <ul>
                <li>
                   <a href="#home" class="active">Home</a>
@@ -41,7 +41,7 @@
          <div class="slide current">
             <div class="overlay"></div>
             <div class="content">
-               <h2>Go Cart</h2>
+               <h2>Go Kart</h2>
             </div>
          </div>
 
@@ -71,36 +71,59 @@
                <h2>Sumowrestling</h2>
             </div>
          </div>
-
       </div>
    </section>
 
    <!-- Section: Activities -->
    <section class="activities" id="activities">
-      <h2>Activities</h2>
+
+      <header>
+         <h2>Activities</h2>
+      </header>
+
       <div class="container activity-cards-container">
          <div class="card activity-card">
-            <img src="Images/Activities/gokart.jpg" alt="Go Kart">
+            <img src="Images/Activities/gokart.jpg" class="open-modal-btn" id="open-modal-btn" alt="Go Kart">
             <h4>Go Kart</h4>
             <div class="overlay"></div>
          </div>
          <div class="card activity-card">
-            <img src="Images/Activities/minigolf.jpg" alt="Minigolft">
+            <img src="Images/Activities/minigolf.jpg" class="open-modal-btn" alt="Minigolft">
             <h4>Minigolf</h4>
             <div class="overlay"></div>
          </div>
          <div class="card activity-card">
-            <img src="Images/Activities/paintball.jpg" alt="Paintball">
+            <img src="Images/Activities/paintball.jpg" class="open-modal-btn" alt="Paintball">
             <h4>Paintball</h4>
             <div class="overlay"></div>
          </div>
          <div class="card activity-card">
-            <img src="Images/Activities/sumowrestling.png" alt="Sumowrestling">
+            <img src="Images/Activities/sumowrestling.png" class="open-modal-btn" alt="Sumowrestling">
             <h4>Sumowrestling</h4>
             <div class="overlay"></div>
          </div>
       </div>
+
+      <!-- Modals -->
+      <div class="container modal-container">
+         <div class="modal gokart-modal" id="gokart-modal">
+            <i class="fas fa-times" class="btn close-modal-btn" id="close-modal-btn"></i>
+            <header>
+               <h2>Go Kart</h2>
+            </header>
+            <p>
+               Want to have some fun on the race track? Then this is the right activity for you and your friends.
+               Compete against your friends and family to get to top position on the podium.
+            </p>
+
+            <a href="gokartbooking.html" class="btn btn-primary">Book Time</a>
+         </div>
+      </div>
    </section>
+
+
+   <!-- Scroll To Top Button -->
+   <i class="fa-solid fa-arrow-up scroll-to-top-btn" id="scroll-to-top-btn"></i>
 </body>
 
 </html>

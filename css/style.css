@@ -9,7 +9,7 @@ nav.main-nav
    background-color: var(--secondary-color);
    border-bottom: 2px solid var(--primary-color);
    box-shadow: var(--box-shadow);
-   z-index: 10;
+   z-index: 100;
    transition: height .15s ease-in;
 }
 
@@ -65,6 +65,48 @@ nav.main-nav .container.nav-container ul li a.active
    color: var(--tertiary-color);
    border-bottom: 2px solid var(--tertiary-color);
    transition: border-bottom .15s ease-in, color .15s ease-in;
+}
+
+/* Scroll To Top Button */
+.scroll-to-top-btn
+{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   position: fixed;
+   bottom: 20px;
+   right: -100px;
+   background-color: var(--primary-color);
+   height: 40px;
+   width: 40px;
+   border-radius: calc(var(--base-border-radius) * 5);
+   color: var(--secondary-color);
+   box-shadow: var(--box-shadow);
+   font-size: 20px;
+   cursor: pointer;
+   transition: opacity .15s ease-in, right .2s ease-in;
+}
+
+.scroll-to-top-btn.active
+{
+   right: 20px;
+   transition: opacity .15s ease-in, right .2s ease-in;
+
+}
+
+.scroll-to-top-btn:hover
+{
+   opacity: .85;
+   transition: opacity .15s ease-in;
+}
+
+.scroll-to-top-btn:active
+{
+   transform: scale(.98);
+   box-shadow: none;
+   transition: none;
 }
 
 /* Slider */
@@ -130,7 +172,7 @@ nav.main-nav .container.nav-container ul li a.active
    background: url('../Images/Slider/sumowrestling.png') no-repeat center center/cover;
 }
 
-/* Section: Activities */
+/* Section: Activities --> Activity Cards */
 section.activities .container.activity-cards-container
 {
    display: grid;
@@ -160,6 +202,7 @@ section.activities .container.activity-cards-container .card.activity-card:hover
    opacity: 1;
    transition: opacity .15s ease-in;
    pointer-events: none;
+   z-index: 10;
 }
 
 section.activities .container.activity-cards-container .card.activity-card img
@@ -188,6 +231,72 @@ section.activities .container.activity-cards-container .card.activity-card:hover
 {
    top: 50%;
    transition: top .2s ease-in .15s;
+   z-index: 20;
 }
 
+/* Section: Activities --> Modal */
 section.activities .modal
+{
+   position: absolute;
+   top: 20%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: none;
+   height: 40vh;
+   width: 40vw;
+   background-color: var(--secondary-color);
+   border-radius: var(--base-border-radius);
+   z-index: 20;
+   pointer-events: all;
+   transition: transform .2s ease-in;
+}
+
+section.activities .modal.active
+{
+   display: block;  
+}
+
+section.activities .modal header
+{
+   position: absolute;
+   top: 5%;
+   left: 50%;
+   white-space: nowrap;
+}
+
+section.activities .modal i
+{
+   position: absolute;
+   right: 20px;
+   top: 20px;
+   font-size: 25px;
+   color: var(--primary-color);
+   cursor: pointer;
+   transition: transform .15s ease-in;
+}
+
+section.activities .modal i:hover
+{
+   transform: rotate(-90deg);
+   transition: transform .15s ease-in;
+}
+
+section.activities .modal p
+{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 18px;
+   text-align: justify;
+}
+
+section.activities .modal a
+{
+   position: absolute;
+   bottom: 30px;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+/* Booking Pages --> Go Kart */

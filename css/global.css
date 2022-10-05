@@ -38,3 +38,8 @@ img
    width: 100%;
    object-fit: cover;
 }
+
+textarea
+{
+   resize: none;
+}
