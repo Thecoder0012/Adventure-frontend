@@ -300,3 +300,52 @@ section.activities .modal a
 }
 
 /* Booking Pages --> Go Kart */
+
+.info-container {
+   padding: 5% 5%;
+   text-align: center;
+   line-height: 2.5em;
+   background-color: var(--primary-color);
+   color: var(--secondary-color);
+ }
+
+ #contact{
+   /* --tertiary-color: #00754a; */
+   background-color: var(--tertiary-color);
+ }
+
+ .info-container button {
+   border-radius: 10px;
+   background-color: transparent;
+   color: var(--secondary-color);
+   position: relative;
+   font-size: 2em;
+   font-weight: 700;
+   font-family: 'Open Sans',sans Serif;
+   border:var(--secondary-color) 1px solid;
+   transition: all 0.5s;
+   padding: 1%;
+   width: 20%;
+   cursor: pointer;
+   margin: 3%;
+   box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+
+.info-container button:after {
+   content: '\2192';
+   position: absolute;
+   opacity: 0;
+   right: 5%;
+}
+
+.info-container button:hover{
+   padding-right: 40px;
+   padding-left:8px;
+}
+
+.info-container button:hover:after {
+   opacity: 1;
+   right: 3%;
+   top: 17%;
+}
