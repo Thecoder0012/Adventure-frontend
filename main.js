@@ -25,37 +25,29 @@ closeModalBtn.addEventListener('click', (e) => closeModal(e))
 const scrollToTopBtn = document.getElementById('scroll-to-top-btn')
 
 // Modal pops up when clicking the activities
-for(let i = 0; i < openModalBtn.length; i++){
+for (let i = 0; i < openModalBtn.length; i++) {
    openModalBtn[i].addEventListener('click', openModal)
-}  
+}
 
 // EVENT LISTENERS //
 
 // Window Events //
-window.addEventListener('scroll', () =>
-{
+window.addEventListener('scroll', () => {
    // Adding and removing the 'shrink' class based on the scroll position on the y-axis
-   if (window.scrollY < 600)
-   {
+   if (window.scrollY < 600) {
       navBar.classList.remove('shrink')
-   }
-   else
-   {
+   } else {
       navBar.classList.add('shrink')
    }
 
-   if (window.scrollY > 600)
-   {
+   if (window.scrollY > 600) {
       scrollToTopBtn.classList.add('active')
-   }
-   else
-   {
+   } else {
       scrollToTopBtn.classList.remove('active')
    }
 })
 
-window.addEventListener('load', () =>
-{
+window.addEventListener('load', () => {
    navBarLinks[0].classList.add('active')
    scrollToTopOfWindow()
 })
@@ -65,19 +57,19 @@ scrollToTopBtn.addEventListener('click', scrollToTopOfWindow)
 // FUNCTIONS //
 
 // Scroll To Top of Window
-function scrollToTopOfWindow()
-{
+function scrollToTopOfWindow() {
    navBarLinks.forEach((navBarLink) => navBarLink.classList.remove('active'))
    navBarLinks[0].classList.add('active')
-   window.scrollTo({ top: 0, behavior: 'smooth' })
+   window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+   })
 }
 
 
 // Update active link
-navBarLinks.forEach((navBarLink) =>
-{
-   navBarLink.addEventListener('click', () =>
-   {
+navBarLinks.forEach((navBarLink) => {
+   navBarLink.addEventListener('click', () => {
       navBarLinks.forEach((navBarLink) => navBarLink.classList.remove('active'))
       navBarLink.classList.add('active')
    })
@@ -85,20 +77,16 @@ navBarLinks.forEach((navBarLink) =>
 
 // Slider //
 // Next Slide
-const nextSlide = () =>
-{
+const nextSlide = () => {
    // Get current class
    const current = document.querySelector('.current')
    // Remove current class
    current.classList.remove('current')
    // Check for next slide
-   if (current.nextElementSibling)
-   {
+   if (current.nextElementSibling) {
       // Add current to next sibling
       current.nextElementSibling.classList.add('current')
-   }
-   else
-   {
+   } else {
       // Add current to start
       slides[0].classList.add('current')
    }
@@ -107,8 +95,7 @@ const nextSlide = () =>
 }
 
 // Previous Slide
-const previousSlide = () =>
-{
+const previousSlide = () => {
    // Get current class
    const current = document.querySelector('.current')
 
@@ -116,13 +103,10 @@ const previousSlide = () =>
    current.classList.remove('current')
 
    // Check for prev slide
-   if (current.previousElementSibling)
-   {
+   if (current.previousElementSibling) {
       // Add current to prev sibling
       current.previousElementSibling.classList.add('current')
-   }
-   else
-   {
+   } else {
       // Add current to last
       slides[slides.length - 1].classList.add('current')
    }
@@ -131,19 +115,16 @@ const previousSlide = () =>
 }
 
 // Auto Slide
-if (isAutoSliding)
-{
+if (isAutoSliding) {
    slideInterval = setInterval(nextSlide, autoSlideIntervalTime)
 }
 
 
 // Open Modal
-function openModal()
-{
+function openModal() {
    modal.classList.add('active')
 
-   if (modal.classList.contains('active'))
-   {
+   if (modal.classList.contains('active')) {
       document.body.classList.add('overlay')
       overlay.classList.remove('hidden');
       document.body.style.pointerEvents = 'none'
@@ -151,15 +132,41 @@ function openModal()
 }
 
 // Close Modal
-function closeModal(e)
-{
+function closeModal(e) {
    modal.classList.remove('active')
 
-   if (!modal.classList.contains('active'))
-   {
+   if (!modal.classList.contains('active')) {
       document.body.classList.remove('overlay')
       document.body.classList.remove('body-overlay')
       overlay.classList.add('hidden');
       document.body.style.pointerEvents = 'all'
    }
 }
+
+
+const formValidation = () => {
+   let name = document.forms["contact"]["fullname"].value;
+   let email = document.forms["contact"]["email"].value;
+   let message = document.forms["contact"]["message"].value;
+
+   if (name === "" && email === "" && message === "") {
+      alert("Fill in the blanks!");
+   } else if (name !== "" && email.includes("@gmail.com") && message !== "") {
+      alert("Your message is sent to us! You will receive a response as soon as possible!")
+   } else if (name === "" && email === "" && message !== "") {
+      alert("You need to type in your fullname and email")
+   } else if (name === "" && email !== "" && message !== "") {
+      alert("Type in your fullname")
+   } else if (name !== "" && email === "" && message !== "") {
+      alert("Type in your mail")
+   } else if (name !== "" && email !== "" && message === "") {
+      alert("Type in your message!")
+   }
+}
+
+const sendMessage = () => {
+   document.querySelector('input[type="submit"]').addEventListener("click", formValidation)
+}
+
+
+sendMessage();
