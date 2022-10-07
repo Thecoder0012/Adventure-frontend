@@ -4,6 +4,9 @@
 const navBar = document.getElementById('main-nav')
 const navBarLinks = document.querySelectorAll('nav.main-nav .container.nav-container ul li a')
 
+// Scroll To Top Button
+const scrollToTopBtn = document.getElementById('scroll-to-top-btn')
+
 // Slider
 const slides = document.querySelectorAll('.slide')
 const isAutoSliding = true
@@ -11,17 +14,35 @@ const autoSlideIntervalTime = 3000
 let slideInterval
 
 // Modals
-const openModalBtn = document.getElementById('open-modal-btn')
-const closeModalBtn = document.getElementById('close-modal-btn')
-const modal = document.querySelector('.modal')
-openModalBtn.addEventListener('click', openModal)
-closeModalBtn.addEventListener('click', (e) => closeModal(e))
+const openGokartModalBtn = document.getElementById('open-gokart-modal-btn')
+const openMinigolfModalBtn = document.getElementById('open-minigolf-modal-btn')
+const openPaintballModalBtn = document.getElementById('open-paintball-modal-btn')
+const openSumoWrestlingModalBtn = document.getElementById('open-sumowrestling-modal-btn')
+const closeGokartModalBtn = document.getElementById('close-gokart-modal-btn')
+const closeMinigolfModalBtn = document.getElementById('close-minigolf-modal-btn')
+const closePaintballModalBtn = document.getElementById('close-paintball-modal-btn')
+const closeSumoWrestlingModalBtn = document.getElementById('close-sumowrestling-modal-btn')
+const goKartModal = document.getElementById('gokart-modal')
+const miniGolfModal = document.getElementById('minigolf-modal')
+const paintBallModal = document.getElementById('paintball-modal')
+const sumoWrestlingModal = document.getElementById('sumowrestling-modal')
 
-// Scroll To Top Button
-const scrollToTopBtn = document.getElementById('scroll-to-top-btn')
+
+
 
 
 // EVENT LISTENERS //
+
+// Modals
+openGokartModalBtn.addEventListener('click', openGokartModal)
+openMinigolfModalBtn.addEventListener('click', openMinigolfModal)
+openPaintballModalBtn.addEventListener('click', openPaintBallModal)
+openSumoWrestlingModalBtn.addEventListener('click', openSumoWrestlingModal)
+closeGokartModalBtn.addEventListener('click', closeGoKartModal)
+closeMinigolfModalBtn.addEventListener('click', closeMinigolfModal)
+closePaintballModalBtn.addEventListener('click', closePaintBallModal)
+closeSumoWrestlingModalBtn.addEventListener('click', closeSumoWrestlingModal)
+
 
 // Window Events //
 window.addEventListener('scroll', () =>
@@ -54,6 +75,8 @@ window.addEventListener('load', () =>
 
 scrollToTopBtn.addEventListener('click', scrollToTopOfWindow)
 
+
+
 // FUNCTIONS //
 
 // Scroll To Top of Window
@@ -63,7 +86,6 @@ function scrollToTopOfWindow()
    navBarLinks[0].classList.add('active')
    window.scrollTo({ top: 0, behavior: 'smooth' })
 }
-
 
 // Update active link
 navBarLinks.forEach((navBarLink) =>
@@ -132,23 +154,82 @@ if (isAutoSliding)
 // Open Modal
 function openModal()
 {
-   modal.classList.add('active')
 
-   if (modal.classList.contains('active'))
+
+   if (goKartModal.classList.contains('active') || miniGolfModal.classList.contains('active') || paintBallModal.classList.contains('active') || sumoWrestlingModal.classList.contains('active'))
    {
       document.body.classList.add('overlay')
       document.body.style.pointerEvents = 'none'
    }
 }
 
+// Open Gokart Modal
+function openGokartModal()
+{
+   goKartModal.classList.add('active')
+   openModal()
+}
+
+// Open Minigolf Modal
+function openMinigolfModal()
+{
+   miniGolfModal.classList.add('active')
+   openModal()
+}
+
+// Open Paintball Modal
+function openPaintBallModal()
+{
+   paintBallModal.classList.add('active')
+   openModal()
+}
+
+// Open Sumowrestling Modal
+function openSumoWrestlingModal()
+{
+   sumoWrestlingModal.classList.add('active')
+   openModal()
+}
+
+
 // Close Modal
 function closeModal(e)
 {
-   modal.classList.remove('active')
 
-   if (!modal.classList.contains('active'))
+   if (!goKartModal.classList.contains('active') || !miniGolfModal.classList.contains('active') || !paintBallModal.classList.contains('active') || !sumoWrestlingModal.classList.contains('active'))
    {
       document.body.classList.remove('overlay')
       document.body.style.pointerEvents = 'all'
    }
 }
+
+// Close modals
+
+// Close Gokart Modal
+function closeGoKartModal()
+{
+   goKartModal.classList.remove('active')
+   closeModal()
+}
+
+// Close Minigolf Modal
+function closeMinigolfModal()
+{
+   miniGolfModal.classList.remove('active')
+   closeModal()
+}
+
+// Close Paintball Modal
+function closePaintBallModal()
+{
+   paintBallModal.classList.remove('active')
+   closeModal()
+}
+
+// Open Sumowrestling Modal
+function closeSumoWrestlingModal()
+{
+   sumoWrestlingModal.classList.remove('active')
+   closeModal()
+}
+
