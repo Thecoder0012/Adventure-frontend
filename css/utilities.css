@@ -28,7 +28,7 @@ section
 section:not(.home) h2
 {
    position: absolute;
-   top: 5%;
+   top: 10%;
    left: 50%;
    transform: translateX(-50%);
    color: var(--tertiary-color);
@@ -62,7 +62,8 @@ header h2
    color: var(--secondary-color);
    text-transform: uppercase;
    background-color: none;
-   transition: box-shadow .15s ease-in, color .15s ease-in, opacity .15s ease-in;
+   font-size: 1.2em;
+   transition: box-shadow .15s ease-in, color .15s ease-in, opacity .15s ease-in, background-color .15s ease-in;
    cursor: pointer;
 }
 
@@ -70,7 +71,7 @@ header h2
 {
    opacity: .85;
    box-shadow: var(--box-shadow);
-   transition: box-shadow .15s ease-in, opacity .15s ease-in;
+   transition: box-shadow .15s ease-in, color .15s ease-in, opacity .15s ease-in, background-color .15s ease-in;
 }
 
 .btn.btn-primary
@@ -81,6 +82,12 @@ header h2
 .btn.btn-primary:hover
 {
    background-color: var(--tertiary-color);
+}
+
+.btn.btn-secondary
+{
+   color: var(--primary-color);
+   background-color: var(--secondary-color);
 }
 
 /* Form */
@@ -212,3 +219,4 @@ form button[type="submit"].disabled
    opacity: .3;
    pointer-events: none;
 }
+
