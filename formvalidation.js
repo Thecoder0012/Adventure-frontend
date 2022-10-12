@@ -35,11 +35,6 @@ function validateBookingForm(e)
          }, 2000)
       }
    })
-
-   if (!document.body.contains('input[type="checkbox"]'))
-   {
-      alert(123)
-   }
 }
 
 function toggleSubmitBtnAbility()
@@ -69,3 +64,4 @@ function calculateTotalPrice()
       totalPriceOutput.innerText = hourlyRatePrice * 24
    }
 }
+
