@@ -6,19 +6,22 @@ function myFunction() {
 
   filter = input.value.toUpperCase();
 
-  table = document.getElementById("MainDiv");
+  table = document.getElementById("MainDiv2");
 
   tr = table.getElementsByTagName("tr");
 
+
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[3];
+    td2 = tr[i].getElementsByTagName("td")[4];
 
-    if (td) {
+    if (td ) {
       txtValue = td.textContent || td.innerText;
-      // tror det er her skal få activity vist også
+     
 
       if (txtValue.toUpperCase().indexOf(filter)  > -1) {
         tr[i].style.display = "";
+        
 
       } else {
         tr[i].style.display = "none";
@@ -64,6 +67,7 @@ fetch('http://localhost:8080/api/v1/activity')
     })
 
     document.querySelector('.activityData').innerHTML = html
+  
 
 })
 

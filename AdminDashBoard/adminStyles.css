@@ -27,10 +27,15 @@ td, th {
 
 #MainDiv {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   column-gap: 15px;
 }
 
+#MainDiv2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+}
 #Activities {
   background-color: lightblue;
   height: 100%;
