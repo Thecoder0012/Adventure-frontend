@@ -64,6 +64,7 @@ fetch("http://localhost:8080/api/v1/customer")
 
           <tr>
 
+            <td>${customer.id} </td>
             <td>${customer.firstName} </td>
 
             <td>${customer.lastName}</td>
@@ -125,6 +126,24 @@ function deleteBooking(id) {
     });
 }
 
+function deleteCustomer(id) {
+  fetch("http://localhost:8080/api/v1/customer/" + id, {
+    method: "DELETE",
+  })
+    .then((res) => {
+      window.location.reload();
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+
 function something() {
   return document.getElementById("input-id").value;
+}
+
+function something1() {
+  return document.getElementById("input-id1").value;
 }

@@ -89,6 +89,12 @@ h3{
   font-size: small;
 }
 
+#input-id1{
+  border: 1.5px solid rgba(158, 234, 255, 0);
+  margin-bottom: 10px;
+  font-size: small;
+}
+
 #myInput {
   background-image: url('/css/searchicon.png');
   background-position: 10px 10px;
