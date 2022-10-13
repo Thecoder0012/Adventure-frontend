@@ -43,11 +43,12 @@ function validateBookingForm(e)
 
    })
 
-
    if (isFilledOutCorrectly)
    {
-      postForm('http://localhost:8080/api/v1/booking/add', createBookingDataObject(GoKartActivityObject))
+      postForm('http://localhost:8080/api/v1/booking/add', createBookingDataObject(activities[i]))
    }
+
+
 }
 
 function toggleSubmitBtnAbility()
@@ -78,23 +79,6 @@ function calculateTotalPrice()
    }
 }
 
-// Activity types
-let GoKartActivityObject =
-{
-   activity: {
-
-      hourPrice: 20.0,
-
-      name: "Gocart",
-
-      minAge: 12,
-
-      description: "DescTEST"
-
-   }
-}
-
-let activities = [ { hourPrice: 20.0, name: "Gocart", minAge: 12, description: "DescTEST" }, { hourPrice: 20.0, name: "Minigolf", minAge: 12, description: "DescTEST" }, { hourPrice: 20.0,name: "Paintball", minAge: 12, description: "DescTEST" }, { hourPrice: 20.0, name: "Sumowrestling", minAge: 12, description: "DescTEST" } ]
 
 // Create booking data object
 function createBookingDataObject(activity)
@@ -122,32 +106,6 @@ function createBookingDataObject(activity)
       }
    }
 
-
-   /*
-   NodeList(7) [ input#full-name-input.input.full-name-input, input#email-input.input.email-input, input#phone-input.input.phone-input, input#time-input.input.time-input, input#number-of-hours-input.input.number-of-hours-input, input#date-input.input.date-input, textarea#additional-info-box.input.additional-info-input ]
-   ​
-   0: <input id="full-name-input" class="input full-name-input" type="text" placeholder="Enter Full Name">
-   ​
-   1: <input id="email-input" class="input email-input" type="email" placeholder="Enter Your E-mail">
-   ​
-   2: <input id="phone-input" class="input phone-input" type="phone" placeholder="Enter Your Phone Number">
-   ​
-   3: <input id="time-input" class="input time-input" type="time">
-   ​
-   4: <input id="number-of-hours-input" class="input number-of-hours-input" type="number">
-   ​
-   5: <input id="date-input" class="input date-input" type="date">
-   ​
-   6: <textarea id="additional-info-box" class="input additional-info-input" placeholder="Additional Comments">
-   ​
-   length: 7
-   ​
-   <prototype>: NodeListPrototype { item: item(), keys: keys(), values: values(), … }
-   
-   
-    
-   */
-   console.log(bookingDataObject)
 }
 
 
@@ -178,3 +136,5 @@ function postForm(url, formObject)
       body: JSON.stringify(formObject)
    })
 }
+
+

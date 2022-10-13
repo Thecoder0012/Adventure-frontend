@@ -1,60 +1,55 @@
 
 fetch('http://localhost:8080/api/v1/activity')
 
-  .then((response) => response.json())
+   .then((response) => response.json())
 
-  .then((activity) => {
+   .then((activity) =>
+   {
 
 
 
-    let html = ""
+      let html = ""
 
-    activity.forEach((activity) => {
+      activity.forEach((activity) =>
+      {
 
-      html += `
-  
+         html += `
 
-          <tbody>
+         <tbody>
+           <tr>
+             <td>${activity.name}</td>
+             <td>${activity.hourPrice}</td>
+             <td>${activity.minAge} </td>
+             <td>${activity.description} </td>
+          </tr>
+        </tbody>`
 
-          <tr>
+      })
 
-            <td>${activity.name} </td>
+      document.querySelector('.activityData').innerHTML = html
 
-            <td>${activity.hourPrice}</td>
-
-            
-            <td>${activity.minAge} </td>
-
-            <td>${activity.description} </td>
-
-                    </tr>
-                    
-                    </tbody>`
-
-    })
-
-    document.querySelector('.activityData').innerHTML = html
-
-})
+   })
 
 
 
 
 fetch('http://localhost:8080/api/v1/customer')
 
-  .then((response) => response.json())
+   .then((response) => response.json())
 
-  .then((customer) => {
+   .then((customer) =>
+   {
 
 
 
-    let html = ""
+      let html = ""
 
-    customer.forEach((customer) => {
+      customer.forEach((customer) =>
+      {
 
          custmerPhone = customer.phoneNumber;
 
-      html += `
+         html += `
   
 
           <tbody>
@@ -74,28 +69,30 @@ fetch('http://localhost:8080/api/v1/customer')
                     
                     </tbody>`
 
-    })
+      })
 
-    document.querySelector('.customerData').innerHTML = html
+      document.querySelector('.customerData').innerHTML = html
 
-})
+   })
 
 var custmerPhone;
 
 
 fetch('http://localhost:8080/api/v1/booking')
 
-  .then((response) => response.json())
+   .then((response) => response.json())
 
-  .then((booking) => {
+   .then((booking) =>
+   {
 
 
 
-    let html = ""
+      let html = ""
 
-    booking.forEach((booking) => {
+      booking.forEach((booking) =>
+      {
 
-      html += `
+         html += `
   
 
           <tbody>
@@ -116,8 +113,8 @@ fetch('http://localhost:8080/api/v1/booking')
                     
                     </tbody>`
 
-    })
+      })
 
-    document.querySelector('.bookingData').innerHTML = html
+      document.querySelector('.bookingData').innerHTML = html
 
-})
+   })

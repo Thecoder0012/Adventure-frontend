@@ -31,7 +31,7 @@ const sumoWrestlingModal = document.getElementById('sumowrestling-modal')
 
 const openModalBtn = document.getElementsByClassName('open-modal-btn')
 const closeModalBtn = document.getElementById('close-modal-btn')
-const modal = document.querySelector('.modal')
+const activityCards = document.querySelectorAll('.card')
 
 
 // EVENT LISTENERS //
@@ -46,6 +46,15 @@ closeMinigolfModalBtn.addEventListener('click', closeMinigolfModal)
 closePaintballModalBtn.addEventListener('click', closePaintBallModal)
 closeSumoWrestlingModalBtn.addEventListener('click', closeSumoWrestlingModal)
 
+activityCards.forEach((activityCard) =>
+{
+   activityCard.addEventListener('click', (e) =>
+   {
+      let imageURL = e.target.getAttribute('src')
+      let chosenActivity = generateObjectForChosenActivity(imageURL)
+   })
+
+})
 
 // Window Events //
 window.addEventListener('scroll', () =>
@@ -153,16 +162,8 @@ if (isAutoSliding)
 // Open Modal
 function openModal()
 {
-
-
-
-   modal.classList.add('active')
-
-   if (modal.classList.contains('active'))
-   {
-      document.body.classList.add('overlay')
-      document.body.style.pointerEvents = 'none'
-   }
+   document.body.classList.add('overlay')
+   document.body.style.pointerEvents = 'none'
 }
 
 
@@ -203,9 +204,9 @@ function closeModal()
    if (!goKartModal.classList.contains('active') || !miniGolfModal.classList.contains('active') || !paintBallModal.classList.contains('active') || !sumoWrestlingModal.classList.contains('active'))
    {
 
-      modal.classList.remove('active')
+      modals.classList.remove('active')
 
-      if (!modal.classList.contains('active'))
+      if (!modals.classList.contains('active'))
       {
          document.body.classList.remove('overlay')
          document.body.style.pointerEvents = 'all'
@@ -243,3 +244,14 @@ function closeSumoWrestlingModal()
    sumoWrestlingModal.classList.remove('active')
    closeModal()
 }
+
+
+// Generate object for chosen activity
+function generateObjectForChosenActivity(imageURL)
+{
+   let activities = [{ imageURL: 'Images\Activities\gokart.jpg', hourPrice: 30.0, name: "Gocart", minAge: 12, description: "DescTEST" }, { imageURL: 'Images\Activities\minigolf.jpg', hourPrice: 20.0, name: "Minigolf", minAge: 12, description: "DescTEST" }, { imageURL: 'Images\Activities\paintball.jpg', hourPrice: 20.0, name: "Paintball", minAge: 12, description: "DescTEST" }, { imageURL: 'Images\Activities\sumowrestling.jpg', hourPrice: 20.0, name: "Sumowrestling", minAge: 12, description: "DescTEST" }]
+   let found = activities.find((activity) => activity.imageURL === imageURL)
+
+   console.log(imageURL)
+}
+
