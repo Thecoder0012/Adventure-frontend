@@ -1,7 +1,6 @@
-
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
-  
+
   input = document.getElementById("myInput");
 
   filter = input.value.toUpperCase();
@@ -10,43 +9,31 @@ function myFunction() {
 
   tr = table.getElementsByTagName("tr");
 
-
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[3];
     td2 = tr[i].getElementsByTagName("td")[4];
 
-    if (td ) {
+    if (td) {
       txtValue = td.textContent || td.innerText;
-     
 
-      if (txtValue.toUpperCase().indexOf(filter)  > -1) {
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
-        
-
       } else {
         tr[i].style.display = "none";
       }
-    }       
+    }
   }
-  document.querySelector('.bookingData').innerHTML = html
-  
+  document.querySelector(".bookingData").innerHTML = html;
 }
 
-fetch('http://localhost:8080/api/v1/activity')
+fetch("http://localhost:8080/api/v1/activity")
+  .then((response) => response.json())
 
-   .then((response) => response.json())
+  .then((activity) => {
+    let html = "";
 
-   .then((activity) =>
-   {
-
-
-
-      let html = ""
-
-      activity.forEach((activity) =>
-      {
-
-         html += `
+    activity.forEach((activity) => {
+      html += `
 
          <tbody>
            <tr>
@@ -55,39 +42,22 @@ fetch('http://localhost:8080/api/v1/activity')
              <td>${activity.minAge} </td>
              <td>${activity.description} </td>
           </tr>
-        </tbody>`
+        </tbody>`;
+    });
 
-      })
+    document.querySelector(".activityData").innerHTML = html;
+  });
 
-<<<<<<< HEAD
-      document.querySelector('.activityData').innerHTML = html
-=======
-    document.querySelector('.activityData').innerHTML = html
-  
->>>>>>> ca8ad77caa6e1f6f4752161f715c45450d99f06b
+fetch("http://localhost:8080/api/v1/customer")
+  .then((response) => response.json())
 
-   })
+  .then((customer) => {
+    let html = "";
 
+    customer.forEach((customer) => {
+      custmerPhone = customer.phoneNumber;
 
-
-
-fetch('http://localhost:8080/api/v1/customer')
-
-   .then((response) => response.json())
-
-   .then((customer) =>
-   {
-
-
-
-      let html = ""
-
-      customer.forEach((customer) =>
-      {
-
-         custmerPhone = customer.phoneNumber;
-
-         html += `
+      html += `
   
 
           <tbody>
@@ -105,80 +75,25 @@ fetch('http://localhost:8080/api/v1/customer')
 
                     </tr>
                     
-                    </tbody>`
+                    </tbody>`;
+    });
 
-      })
-
-      document.querySelector('.customerData').innerHTML = html
-
-   })
+    document.querySelector(".customerData").innerHTML = html;
+  });
 
 var custmerPhone;
 
-
-fetch('http://localhost:8080/api/v1/booking')
-
-   .then((response) => response.json())
-
-   .then((booking) =>
-   {
-
-
-
-      let html = ""
-
-      booking.forEach((booking) =>
-      {
-
-         html += `
-  
-
-          <tbody>
-
-          <tr>
-
-            <td>${booking.localDate} </td>
-
-            <td>${booking.timeStart}</td>
-
-            <td>${booking.timeEnd} </td>
-
-            <td>${booking.customerDto.phoneNumber} </td>
-            <td>${booking.activityDto.name} </td>
-
-
-                    </tr>
-                    
-                    </tbody>`
-
-      })
-
-      document.querySelector('.bookingData').innerHTML = html
-
-<<<<<<< HEAD
-   })
-=======
-})
-
-fetch('http://localhost:8080/api/v1/booking')
-
+fetch("http://localhost:8080/api/v1/booking")
   .then((response) => response.json())
 
   .then((booking) => {
-
-
-
-    let html = ""
+    let html = "";
 
     booking.forEach((booking) => {
-
       html += `
-  
-
-          <tbody>
-
-          <tr>
-
+          <tbody}>
+          <tr id={item-1}>
+            <td>${booking.id} </td>
             <td>${booking.localDate} </td>
 
             <td>${booking.timeStart}</td>
@@ -191,13 +106,25 @@ fetch('http://localhost:8080/api/v1/booking')
 
                     </tr>
                     
-                    </tbody>`
+                    </tbody>`;
+    });
 
+    document.querySelector(".bookingData").innerHTML = html;
+  });
+
+function deleteBooking(id) {
+  fetch("http://localhost:8080/api/v1/booking/delete/" + id, {
+    method: "DELETE",
+  })
+    .then((res) => {
+      window.location.reload();
+      console.log(res);
     })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
-    document.querySelector('.bookingSearch').innerHTML = html
-
-})
-
-
->>>>>>> ca8ad77caa6e1f6f4752161f715c45450d99f06b
+function something() {
+  return document.getElementById("input-id").value;
+}
