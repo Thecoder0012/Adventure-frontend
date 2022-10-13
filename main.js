@@ -46,16 +46,6 @@ closeMinigolfModalBtn.addEventListener('click', closeMinigolfModal)
 closePaintballModalBtn.addEventListener('click', closePaintBallModal)
 closeSumoWrestlingModalBtn.addEventListener('click', closeSumoWrestlingModal)
 
-activityCards.forEach((activityCard) =>
-{
-   activityCard.addEventListener('click', (e) =>
-   {
-      let imageURL = e.target.getAttribute('src')
-      let chosenActivity = generateObjectForChosenActivity(imageURL)
-   })
-
-})
-
 // Window Events //
 window.addEventListener('scroll', () =>
 {
@@ -245,13 +235,24 @@ function closeSumoWrestlingModal()
    closeModal()
 }
 
+activityCards.forEach((activityCard) =>
+{
+   activityCard.addEventListener('click', (e) =>
+   {
+      let imageURL = e.target.getAttribute('src')
+      let chosenActivity = generateObjectForChosenActivity(imageURL)
+   })
+
+})
 
 // Generate object for chosen activity
 function generateObjectForChosenActivity(imageURL)
 {
-   let activities = [{ imageURL: 'Images\Activities\gokart.jpg', hourPrice: 30.0, name: "Gocart", minAge: 12, description: "DescTEST" }, { imageURL: 'Images\Activities\minigolf.jpg', hourPrice: 20.0, name: "Minigolf", minAge: 12, description: "DescTEST" }, { imageURL: 'Images\Activities\paintball.jpg', hourPrice: 20.0, name: "Paintball", minAge: 12, description: "DescTEST" }, { imageURL: 'Images\Activities\sumowrestling.jpg', hourPrice: 20.0, name: "Sumowrestling", minAge: 12, description: "DescTEST" }]
+   let activities = [{ imageURL: 'Images/Activities/gokart.jpg', hourPrice: 30.0, name: "Gocart", minAge: 12, description: "DescTEST" }, { imageURL: 'Images/Activities/minigolf.jpg', hourPrice: 20.0, name: "Minigolf", minAge: 12, description: "DescTEST" }, { imageURL: 'Images/Activities/paintball.jpg', hourPrice: 20.0, name: "Paintball", minAge: 12, description: "DescTEST" }, { imageURL: 'Images/Activities/sumowrestling.jpg', hourPrice: 20.0, name: "Sumowrestling", minAge: 12, description: "DescTEST" }]
    let found = activities.find((activity) => activity.imageURL === imageURL)
 
-   console.log(imageURL)
+   console.log(found)
+
+   return found
 }
 
