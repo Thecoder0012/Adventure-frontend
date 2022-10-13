@@ -46,7 +46,7 @@ function validateBookingForm(e)
 
    if (isFilledOutCorrectly)
    {
-      postForm('http://localhost:8080/api/v1/booking/add', createBookingDataObject(miniGolfActivityObject))
+      postForm('http://localhost:8080/api/v1/booking/add', createBookingDataObject(GoKartActivityObject))
    }
 }
 
@@ -79,7 +79,7 @@ function calculateTotalPrice()
 }
 
 // Activity types
-let miniGolfActivityObject =
+let GoKartActivityObject =
 {
    activity: {
 
@@ -94,6 +94,7 @@ let miniGolfActivityObject =
    }
 }
 
+let activities = [ { hourPrice: 20.0, name: "Gocart", minAge: 12, description: "DescTEST" }, { hourPrice: 20.0, name: "Minigolf", minAge: 12, description: "DescTEST" }, { hourPrice: 20.0,name: "Paintball", minAge: 12, description: "DescTEST" }, { hourPrice: 20.0, name: "Sumowrestling", minAge: 12, description: "DescTEST" } ]
 
 // Create booking data object
 function createBookingDataObject(activity)
