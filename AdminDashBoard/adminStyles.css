@@ -1,47 +1,125 @@
 table, th, td {
-    height: 20%;
+  height: 20%;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-left: 0%;
+  border-collapse: collapse;
+  width: 100%;
+  margin-left: 0%;
 }
 
 th {
-    background-color: grey;
-    color: white;
+  background-color: grey;
+  color: white;
 }
 
 tr:nth-child(even) { /*  hver evig eneste lige kolonne får disse regler under*/
-    background-color: lightgray;
+  background-color: lightgray;
 }
 table tr:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 td, th {
-    border: 1px solid black;
-    text-align: center;
-    padding: 1.5%;
+  border: 1px solid black;
+  text-align: center;
+  padding: 1.5%;
 }
 
 #MainDiv {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 15px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 15px;
 }
 
+#MainDiv2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+}
 #Activities {
-    background-color: lightblue;
-    height: 90%;
+  background-color: lightblue;
+  height: 100%;
+  padding: 10px;
 }
 
 #Customers {
-    background-color: lightblue;
-    height: 90%;
+  background-color: lightblue;
+  height: 100%;
+  padding: 10px;
 }
 
 #Booking {
-    background-color: lightblue;
-    height: 90%;
+  background-color: lightblue;
+  height: 100%;
+  padding: 10px;
+}
+
+*
+{
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+.deleteBtn{
+  position: absolute;
+  top: 145px;
+  left: 20%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.deleteBtn0{
+  font-weight: bold;
+    position: absolute;
+    top: 145px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100px;
+    cursor: pointer;
+}
+
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #89c1c6;
+  margin-bottom: 12px;
+  
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th{
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable td {
+  background-color: lightblue;
+}
+
+.test{
+  text-align: center;
+}
+
+#myTable tr {
+  
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
 }

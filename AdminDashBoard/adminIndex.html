@@ -1,4 +1,3 @@
-<!--NOT ALLOWED TO EDIT WITHOUT PERMISSION FROM MO-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,21 +8,31 @@
    
     <title>Admin DashBoard</title>
 </head>
+
+<h2 class="test">Admin dashboard</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for booking.." title="Type in a booking">
+
+ 
+
 <body>
-    <p>Admin Dashboard</p>
+    
     <div id="MainDiv">
-        <div id="Activities">
-            <h3>Activities control</h3>
+        <div id="MainDiv2">
+        <div id="Booking">
+            <h3>Bookings</h3>
+            <button class="deleteBtn" type="button">Slet booking</button>
             <table>
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>min age</th>
-                        <th>descrip.</th>
+                        <th>Dato</th>
+                        <th>Tidstart</th>
+                        <th>Tidslut</th>
+                        <th>Kundetlf</th>
+                        <th>Aktivitet</th>
                     </tr>
                 </thead>
-                <tbody class="activityData">
+                <tbody class="bookingData">
                     <tr>
                         <td></td>
                     </tr>
@@ -31,14 +40,16 @@
             </table>
         </div>
         <div id="Customers">
-            <h3>Customers control</h3>
+            <h3>Kunder</h3>
+            <button class="deleteBtn0" type="button">Slet booking</button>
+            <button class="addBtn" type="button">Tilføj booking</button>
             <table>
                 <thead>
                     <tr>
-                        <th>First name</th>
-                        <th>Last name</th>
-                        <th>e-mail</th>
-                        <th>Phone</th>
+                        <th>Fornavn</th>
+                        <th>Efternavn</th>
+                        <th>E-mail</th>
+                        <th>Tlf.</th>
                     </tr>
                 </thead>
                 <tbody class="customerData">
@@ -48,19 +59,20 @@
                 </tbody>
             </table>
         </div>
-        <div id="Booking">
-            <h3>Bookings control</h3>
+    </div>
+        <div id="Activities">
+            <h3>Aktiviteter</h3>
+            <button class="deleteBtn1" type="button">Slet booking</button>
             <table>
                 <thead>
                     <tr>
-                        <th>Dato</th>
-                        <th>Tidstart</th>
-                        <th>Tidslut</th>
-                        <th>Kundetlf</th>
-                        <th>Activity</th>
+                        <th>Navn</th>
+                        <th>Pris</th>
+                        <th>Min. alder</th>
+                        <th>Beskrivelse</th>
                     </tr>
                 </thead>
-                <tbody class="bookingData">
+                <tbody class="activityData">
                     <tr>
                         <td></td>
                     </tr>
