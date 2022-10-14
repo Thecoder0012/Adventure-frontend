@@ -10,8 +10,7 @@ function myFunction() {
   tr = table.getElementsByTagName("tr");
 
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[3];
-    td2 = tr[i].getElementsByTagName("td")[4];
+    td = tr[i].getElementsByTagName("td")[4];
 
     if (td) {
       txtValue = td.textContent || td.innerText;
