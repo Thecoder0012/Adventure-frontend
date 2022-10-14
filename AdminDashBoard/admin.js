@@ -25,6 +25,8 @@ function myFunction() {
   document.querySelector(".bookingData").innerHTML = html;
 }
 
+//Comment
+
 fetch("http://localhost:8080/api/v1/activity")
   .then((response) => response.json())
 
