@@ -1,85 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="adminStyles.css">
-   
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="adminStyles.css" />
+
     <title>Admin DashBoard</title>
-</head>
+  </head>
 
-<h2 class="test">Admin dashboard</h2>
+  <h2 class="test">Kontrolpanel</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for booking.." title="Type in a booking">
+  <input
+    type="text"
+    id="myInput"
+    onkeyup="myFunction()"
+    placeholder="Search for booking.."
+    title="Type in a booking"
+  />
 
- 
-
-<body>
-    
+  <body>
     <div id="MainDiv">
-        <div id="MainDiv2">
+      <div id="MainDiv2">
         <div id="Booking">
-            <h3>Bookings</h3>
-            <button class="deleteBtn" type="button">Slet booking</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Dato</th>
-                        <th>Tidstart</th>
-                        <th>Tidslut</th>
-                        <th>Kundetlf</th>
-                        <th>Aktivitet</th>
-                    </tr>
-                </thead>
-                <tbody class="bookingData">
-                    <tr>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+          <h3>Bookings</h3>
+
+          
+          <input id="input-id" value="" placeholder="Booking-ID"> </input>
+          <button class="deleteBtn" type="button" onclick="deleteBooking(something())">
+            Slet booking
+          </button>
+        <!-- updateBtn virker ikke endnu -->
+          <button class="updateBtn" type="button" onclick="">
+            Ændre booking
+          </button>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Dato</th>
+                <th>Tidstart</th>
+                <th>Tidslut</th>
+                <th>Kundetlf</th>
+                <th>Aktivitet</th>
+              </tr>
+            </thead>
+            <tbody class="bookingData">
+              <tr>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div id="Customers">
-            <h3>Kunder</h3>
-            <button class="deleteBtn0" type="button">Slet booking</button>
-            <button class="addBtn" type="button">Tilføj booking</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Fornavn</th>
-                        <th>Efternavn</th>
-                        <th>E-mail</th>
-                        <th>Tlf.</th>
-                    </tr>
-                </thead>
-                <tbody class="customerData">
-                    <tr>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+          <h3>Kunder</h3>
+          <input id="input-id1" value="" placeholder="Kunde-ID"> </input>
+          <button class="deleteBtn" type="button" onclick="deleteCustomer(something1())">
+            Slet kunde
+          </button>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Fornavn</th>
+                <th>Efternavn</th>
+                <th>E-mail</th>
+                <th>Tlf.</th>
+              </tr>
+            </thead>
+            <tbody class="customerData">
+              <tr>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+      <div id="Activities">
+        <h3>Aktiviteter</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Navn</th>
+              <th>Pris</th>
+              <th>Min. alder</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody class="activityData">
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-        <div id="Activities">
-            <h3>Aktiviteter</h3>
-            <button class="deleteBtn1" type="button">Slet booking</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Navn</th>
-                        <th>Pris</th>
-                        <th>Min. alder</th>
-                        <th>Beskrivelse</th>
-                    </tr>
-                </thead>
-                <tbody class="activityData">
-                    <tr>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>  
-    <script src="admin.js"></script>  
-</body>
+    <script src="admin.js"></script>
+  </body>
 </html>
