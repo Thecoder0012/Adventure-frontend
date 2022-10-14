@@ -1,3 +1,5 @@
+
+
 // Booking Form
 const form = document.getElementById('form')
 const inputs = document.querySelectorAll('.input')
@@ -8,6 +10,7 @@ const totalPriceOutput = document.getElementById('total-price-output')
 const additionalInfoBox = document.getElementById('additional-info-box')
 const minimumAgeCheckBox = document.getElementById('minimum-age-check')
 const submitBtn = document.getElementById('submit-btn')
+
 
 let hourlyRatePrice = 150
 
@@ -45,11 +48,10 @@ function validateBookingForm(e)
 
    if (isFilledOutCorrectly)
    {
-      postForm('http://localhost:8080/api/v1/booking/add', createBookingDataObject(activities[i]))
+      postForm('http://localhost:8080/api/v1/booking/add', createBookingDataObject())
    }
-
-
 }
+
 
 function toggleSubmitBtnAbility()
 {
@@ -89,10 +91,13 @@ function createBookingDataObject(activity)
    let timeStart = inputs[3].valueAsNumber
    let timeEnd = timeStart + inputs[4].valueAsNumber
 
+   const localDate = inputs[5].value
+   const localDateToString = new Date(localDate)
+
 
    const bookingDataObject =
    {
-      localDate: inputs[5].value,
+
       timeStart: timeStart,
       timeEnd: timeEnd,
       activity: activity,
@@ -106,6 +111,7 @@ function createBookingDataObject(activity)
       }
    }
 
+   console.log(typeof bookingDataObject.timeStart)
 }
 
 
@@ -125,9 +131,9 @@ function checkNameCredentials()
 
 
 // Post form
-function postForm(url, formObject)
+async function postForm(url, formObject)
 {
-   fetch(url, {
+   let response = await fetch(url, {
       method: 'POST',
       headers: {
          'Accept': 'application/json',

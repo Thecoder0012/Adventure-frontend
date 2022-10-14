@@ -16,35 +16,29 @@ let slideInterval
 
 
 // Modals
-const openGokartModalBtn = document.getElementById('open-gokart-modal-btn')
-const openMinigolfModalBtn = document.getElementById('open-minigolf-modal-btn')
-const openPaintballModalBtn = document.getElementById('open-paintball-modal-btn')
-const openSumoWrestlingModalBtn = document.getElementById('open-sumowrestling-modal-btn')
-const closeGokartModalBtn = document.getElementById('close-gokart-modal-btn')
-const closeMinigolfModalBtn = document.getElementById('close-minigolf-modal-btn')
-const closePaintballModalBtn = document.getElementById('close-paintball-modal-btn')
-const closeSumoWrestlingModalBtn = document.getElementById('close-sumowrestling-modal-btn')
-const goKartModal = document.getElementById('gokart-modal')
-const miniGolfModal = document.getElementById('minigolf-modal')
-const paintBallModal = document.getElementById('paintball-modal')
-const sumoWrestlingModal = document.getElementById('sumowrestling-modal')
+// const openGokartModalBtn = document.getElementById('open-gokart-modal-btn')
+// const openMinigolfModalBtn = document.getElementById('open-minigolf-modal-btn')
+// const openPaintballModalBtn = document.getElementById('open-paintball-modal-btn')
+// const openSumoWrestlingModalBtn = document.getElementById('open-sumowrestling-modal-btn')
+// const closeGokartModalBtn = document.getElementById('close-gokart-modal-btn')
+// const closeMinigolfModalBtn = document.getElementById('close-minigolf-modal-btn')
+// const closePaintballModalBtn = document.getElementById('close-paintball-modal-btn')
+// const closeSumoWrestlingModalBtn = document.getElementById('close-sumowrestling-modal-btn')
+// const goKartModal = document.getElementById('gokart-modal')
+// const miniGolfModal = document.getElementById('minigolf-modal')
+// const paintBallModal = document.getElementById('paintball-modal')
+// const sumoWrestlingModal = document.getElementById('sumowrestling-modal')
 
-const openModalBtn = document.getElementsByClassName('open-modal-btn')
-const closeModalBtn = document.getElementById('close-modal-btn')
 const activityCards = document.querySelectorAll('.card')
 
 
 // EVENT LISTENERS //
 
 // Modals
-openGokartModalBtn.addEventListener('click', openGokartModal)
-openMinigolfModalBtn.addEventListener('click', openMinigolfModal)
-openPaintballModalBtn.addEventListener('click', openPaintBallModal)
-openSumoWrestlingModalBtn.addEventListener('click', openSumoWrestlingModal)
-closeGokartModalBtn.addEventListener('click', closeGoKartModal)
-closeMinigolfModalBtn.addEventListener('click', closeMinigolfModal)
-closePaintballModalBtn.addEventListener('click', closePaintBallModal)
-closeSumoWrestlingModalBtn.addEventListener('click', closeSumoWrestlingModal)
+// closeGokartModalBtn.addEventListener('click', closeGoKartModal)
+// closeMinigolfModalBtn.addEventListener('click', closeMinigolfModal)
+// closePaintballModalBtn.addEventListener('click', closePaintBallModal)
+// closeSumoWrestlingModalBtn.addEventListener('click', closeSumoWrestlingModal)
 
 // Window Events //
 window.addEventListener('scroll', () =>
